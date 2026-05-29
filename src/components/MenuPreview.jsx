@@ -7,14 +7,14 @@ const FEATURED = [
   { id: "f2",  en: "Paneer Tikka",          te: "పనీర్ టిక్కా",       cat: "Starters",       img: "https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?w=400&q=80" },
   { id: "f3",  en: "Paneer Butter Masala",  te: "పనీర్ బటర్ మసాలా",   cat: "Gravy",          img: "https://images.unsplash.com/photo-1631452180519-c014fe946bc7?w=400&q=80" },
   { id: "f4",  en: "Veg Dum Biryani",       te: "వెజ్ దమ్ బిర్యానీ",  cat: "Biryani",        img: "https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=400&q=80" },
-  { id: "f5",  en: "Gulab Jamun",           te: "గులాబ్ జామూన్",      cat: "Sweets",         img: "https://images.unsplash.com/photo-1607301405390-d831c242f59b?w=400&q=80" },
-  { id: "f6",  en: "Badam Milk Shake",      te: "బాదం మిల్క్ షేక్",   cat: "Welcome Drinks", img: "https://images.unsplash.com/photo-1572490122747-3968b75cc699?w=400&q=80" },
+  { id: "f5",  en: "Gulab Jamun",           te: "గులాబ్ జామూన్",      cat: "Sweets",         img: "https://images.unsplash.com/photo-1558024920-b41e1887dc32?w=400&q=80" },
+  { id: "f6",  en: "Badam Milk Shake",      te: "బాదం మిల్క్ షేక్",   cat: "Welcome Drinks", img: "https://images.unsplash.com/photo-1570696516188-ade861b84a49?w=400&q=80" },
   { id: "f7",  en: "Pav Bhaji",             te: "పావ్ భాజీ",           cat: "Welcome Snacks", img: "https://images.unsplash.com/photo-1606491956689-2ea866880c84?w=400&q=80" },
   { id: "f8",  en: "Butter Naan",           te: "బటర్ నాన్",           cat: "Rotis",          img: "https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=400&q=80" },
-  { id: "f9",  en: "Pulka",                 te: "పుల్కా",              cat: "Rotis",          img: "https://images.unsplash.com/photo-1518492104633-130d0cc84637?w=400&q=80" },
-  { id: "f10", en: "Carrot Halwa",          te: "క్యారెట్ హల్వా",      cat: "Halwas",         img: "https://images.unsplash.com/photo-1666987988760-1acee6e0d31c?w=400&q=80" },
-  { id: "f11", en: "Mango Pulihora",        te: "మామిడి పులిహోర",      cat: "Flavoured Rice", img: "https://images.unsplash.com/photo-1574653853027-5382a3d23a15?w=400&q=80" },
-  { id: "f12", en: "Kulfi",                 te: "కుల్ఫీ",               cat: "Ice Creams",     img: "https://images.unsplash.com/photo-1551024601-bec78aea704b?w=400&q=80" },
+  { id: "f9",  en: "Pulka",                 te: "పుల్కా",              cat: "Rotis",          img: "https://images.unsplash.com/photo-1540420773420-3366772f4999?w=400&q=80" },
+  { id: "f10", en: "Carrot Halwa",          te: "క్యారెట్ హల్వా",      cat: "Halwas",         img: "https://images.unsplash.com/photo-1624300629298-e9ff39444e9f?w=400&q=80" },
+  { id: "f11", en: "Mango Pulihora",        te: "మామిడి పులిహోర",      cat: "Flavoured Rice", img: "https://images.unsplash.com/photo-1536304929831-ee1ca9d44906?w=400&q=80" },
+  { id: "f12", en: "Kulfi",                 te: "కుల్ఫీ",               cat: "Ice Creams",     img: "https://images.unsplash.com/photo-1497034825429-c343d7c6a68f?w=400&q=80" },
 ];
 
 const CAT_COLORS = {
@@ -63,7 +63,7 @@ export default function MenuPreview() {
             return (
               <div
                 key={item.id}
-                onClick={() => navigate("/menu")}
+                onClick={() => navigate(`/menu?cat=${encodeURIComponent(item.cat)}`)}
                 className={`group relative flex flex-col overflow-hidden rounded-2xl border-2 ${colors.border} cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:border-saffron bg-white`}
                 style={{ animationDelay: `${idx * 50}ms` }}
               >
@@ -75,15 +75,23 @@ export default function MenuPreview() {
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                     loading="lazy"
                   />
-                  {/* Gradient overlay at bottom of image */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
-                  {/* Category Badge on image */}
-                  <span className={`absolute bottom-2 left-2 text-[10px] font-bold font-body px-2.5 py-1 rounded-full ${colors.badge} shadow-sm`}>
+
+                  {/* Normal gradient + badge */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent transition-opacity duration-300 group-hover:opacity-0"></div>
+                  <span className={`absolute bottom-2 left-2 text-[10px] font-bold font-body px-2.5 py-1 rounded-full ${colors.badge} shadow-sm transition-opacity duration-300 group-hover:opacity-0`}>
                     {item.cat}
                   </span>
-                  {/* Hover Arrow */}
-                  <div className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity bg-white/90 rounded-full p-1">
-                    <ArrowRightIcon className="w-3.5 h-3.5 text-saffron" />
+
+                  {/* Hover Overlay: "View all [Category]" */}
+                  <div className="absolute inset-0 flex flex-col items-center justify-center bg-black/60 backdrop-blur-[2px] opacity-0 group-hover:opacity-100 transition-all duration-300">
+                    <span className="text-white/70 text-[10px] font-body uppercase tracking-widest mb-1">Browse</span>
+                    <span className="text-white font-display font-bold text-base leading-tight text-center px-2">
+                      All {item.cat}
+                    </span>
+                    <div className="mt-2 flex items-center gap-1 bg-saffron text-white text-xs font-bold px-3 py-1.5 rounded-full">
+                      View Menu
+                      <ArrowRightIcon className="w-3 h-3" />
+                    </div>
                   </div>
                 </div>
 
