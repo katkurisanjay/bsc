@@ -3,18 +3,18 @@ import { useLang } from "../context/LanguageContext";
 import { ArrowRightIcon, SparklesIcon } from "@heroicons/react/24/outline";
 
 const FEATURED = [
-  { id: "f1",  en: "Masala Dosa",          te: "మసాల దోస",           cat: "Tiffins",       emoji: "🫓" },
-  { id: "f2",  en: "Paneer Tikka",          te: "పనీర్ టిక్కా",       cat: "Starters",      emoji: "🧀" },
-  { id: "f3",  en: "Paneer Butter Masala",  te: "పనీర్ బటర్ మసాలా",   cat: "Gravy",         emoji: "🍛" },
-  { id: "f4",  en: "Veg Dum Biryani",       te: "వెజ్ దమ్ బిర్యానీ",  cat: "Biryani",       emoji: "🍚" },
-  { id: "f5",  en: "Gulab Jamun",           te: "గులాబ్ జామూన్",      cat: "Sweets",        emoji: "🍮" },
-  { id: "f6",  en: "Badam Milk Shake",      te: "బాదం మిల్క్ షేక్",   cat: "Welcome Drinks",emoji: "🥛" },
-  { id: "f7",  en: "Pav Bhaji",             te: "పావ్ భాజీ",           cat: "Welcome Snacks",emoji: "🥘" },
-  { id: "f8",  en: "Butter Naan",           te: "బటర్ నాన్",           cat: "Rotis",         emoji: "🫓" },
-  { id: "f9",  en: "Pulka",                 te: "పుల్కా",              cat: "Rotis",         emoji: "🫓" },
-  { id: "f10", en: "Carrot Halwa",          te: "క్యారెట్ హల్వా",      cat: "Halwas",        emoji: "🍯" },
-  { id: "f11", en: "Mango Pulihora",        te: "మామిడి పులిహోర",      cat: "Flavoured Rice",emoji: "🍋" },
-  { id: "f12", en: "Kulfi",                 te: "కుల్ఫీ",               cat: "Ice Creams",    emoji: "🍦" },
+  { id: "f1",  en: "Masala Dosa",          te: "మసాల దోస",           cat: "Tiffins",        img: "https://images.unsplash.com/photo-1668236543090-82eba5ee5976?w=400&q=80" },
+  { id: "f2",  en: "Paneer Tikka",          te: "పనీర్ టిక్కా",       cat: "Starters",       img: "https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?w=400&q=80" },
+  { id: "f3",  en: "Paneer Butter Masala",  te: "పనీర్ బటర్ మసాలా",   cat: "Gravy",          img: "https://images.unsplash.com/photo-1631452180519-c014fe946bc7?w=400&q=80" },
+  { id: "f4",  en: "Veg Dum Biryani",       te: "వెజ్ దమ్ బిర్యానీ",  cat: "Biryani",        img: "https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=400&q=80" },
+  { id: "f5",  en: "Gulab Jamun",           te: "గులాబ్ జామూన్",      cat: "Sweets",         img: "https://images.unsplash.com/photo-1607301405390-d831c242f59b?w=400&q=80" },
+  { id: "f6",  en: "Badam Milk Shake",      te: "బాదం మిల్క్ షేక్",   cat: "Welcome Drinks", img: "https://images.unsplash.com/photo-1572490122747-3968b75cc699?w=400&q=80" },
+  { id: "f7",  en: "Pav Bhaji",             te: "పావ్ భాజీ",           cat: "Welcome Snacks", img: "https://images.unsplash.com/photo-1606491956689-2ea866880c84?w=400&q=80" },
+  { id: "f8",  en: "Butter Naan",           te: "బటర్ నాన్",           cat: "Rotis",          img: "https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=400&q=80" },
+  { id: "f9",  en: "Pulka",                 te: "పుల్కా",              cat: "Rotis",          img: "https://images.unsplash.com/photo-1518492104633-130d0cc84637?w=400&q=80" },
+  { id: "f10", en: "Carrot Halwa",          te: "క్యారెట్ హల్వా",      cat: "Halwas",         img: "https://images.unsplash.com/photo-1666987988760-1acee6e0d31c?w=400&q=80" },
+  { id: "f11", en: "Mango Pulihora",        te: "మామిడి పులిహోర",      cat: "Flavoured Rice", img: "https://images.unsplash.com/photo-1574653853027-5382a3d23a15?w=400&q=80" },
+  { id: "f12", en: "Kulfi",                 te: "కుల్ఫీ",               cat: "Ice Creams",     img: "https://images.unsplash.com/photo-1551024601-bec78aea704b?w=400&q=80" },
 ];
 
 const CAT_COLORS = {
@@ -57,37 +57,44 @@ export default function MenuPreview() {
         </div>
 
         {/* Featured Items Grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 mb-12 reveal reveal-delay-1">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-5 mb-12 reveal reveal-delay-1">
           {FEATURED.map((item, idx) => {
             const colors = CAT_COLORS[item.cat] || { bg: "bg-gray-50", border: "border-gray-200", badge: "bg-gray-100 text-gray-700" };
             return (
               <div
                 key={item.id}
                 onClick={() => navigate("/menu")}
-                className={`group relative flex flex-col items-center text-center p-5 rounded-2xl border-2 ${colors.bg} ${colors.border} cursor-pointer transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-saffron`}
+                className={`group relative flex flex-col overflow-hidden rounded-2xl border-2 ${colors.border} cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:border-saffron bg-white`}
                 style={{ animationDelay: `${idx * 50}ms` }}
               >
-                {/* Emoji */}
-                <div className="text-4xl mb-3 transition-transform duration-300 group-hover:scale-110">
-                  {item.emoji}
+                {/* Food Image */}
+                <div className="relative w-full h-40 overflow-hidden">
+                  <img
+                    src={item.img}
+                    alt={item.en}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    loading="lazy"
+                  />
+                  {/* Gradient overlay at bottom of image */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
+                  {/* Category Badge on image */}
+                  <span className={`absolute bottom-2 left-2 text-[10px] font-bold font-body px-2.5 py-1 rounded-full ${colors.badge} shadow-sm`}>
+                    {item.cat}
+                  </span>
+                  {/* Hover Arrow */}
+                  <div className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity bg-white/90 rounded-full p-1">
+                    <ArrowRightIcon className="w-3.5 h-3.5 text-saffron" />
+                  </div>
                 </div>
 
-                {/* Name */}
-                <h3 className="font-body font-semibold text-sm text-[#1A1A1A] mb-1 leading-tight group-hover:text-saffron transition-colors">
-                  {lang === "en" ? item.en : item.te}
-                </h3>
-                <p className="font-body text-xs text-gray-400 mb-3">
-                  {lang === "en" ? item.te : item.en}
-                </p>
-
-                {/* Category Badge */}
-                <span className={`text-[10px] font-semibold font-body px-2.5 py-1 rounded-full ${colors.badge}`}>
-                  {item.cat}
-                </span>
-
-                {/* Hover Arrow */}
-                <div className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity">
-                  <ArrowRightIcon className="w-4 h-4 text-saffron" />
+                {/* Text Content */}
+                <div className={`p-4 ${colors.bg}`}>
+                  <h3 className="font-body font-bold text-sm text-[#1A1A1A] mb-0.5 leading-tight group-hover:text-saffron transition-colors">
+                    {lang === "en" ? item.en : item.te}
+                  </h3>
+                  <p className="font-body text-xs text-gray-400">
+                    {lang === "en" ? item.te : item.en}
+                  </p>
                 </div>
               </div>
             );
