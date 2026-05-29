@@ -27,7 +27,7 @@ export default function About() {
             <div className="relative z-10 flex flex-col items-center gap-6 text-center">
               {/* Photo */}
               <div className="relative flex-shrink-0 mx-auto">
-                <div className="w-48 h-48 sm:w-56 sm:h-56 lg:w-64 lg:h-64 rounded-full border-[6px] border-white shadow-2xl overflow-hidden group-hover:scale-105 transition-transform duration-500">
+                <div className="w-64 h-64 sm:w-72 sm:h-72 lg:w-80 lg:h-80 rounded-full border-[8px] border-white shadow-2xl overflow-hidden group-hover:scale-105 transition-transform duration-500">
                   <img 
                     src="/master chef.png" 
                     alt="Master Chef" 
