@@ -7,13 +7,13 @@ const FEATURED = [
   { id: "f2",  en: "Paneer Tikka",          te: "పనీర్ టిక్కా",       cat: "Starters",       img: "https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?w=400&q=80" },
   { id: "f3",  en: "Paneer Butter Masala",  te: "పనీర్ బటర్ మసాలా",   cat: "Gravy",          img: "https://images.unsplash.com/photo-1631452180519-c014fe946bc7?w=400&q=80" },
   { id: "f4",  en: "Veg Dum Biryani",       te: "వెజ్ దమ్ బిర్యానీ",  cat: "Biryani",        img: "https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=400&q=80" },
-  { id: "f5",  en: "Gulab Jamun",           te: "గులాబ్ జామూన్",      cat: "Sweets",         img: "https://images.unsplash.com/photo-1558024920-b41e1887dc32?w=400&q=80" },
-  { id: "f6",  en: "Badam Milk Shake",      te: "బాదం మిల్క్ షేక్",   cat: "Welcome Drinks", img: "https://images.unsplash.com/photo-1570696516188-ade861b84a49?w=400&q=80" },
+  { id: "f5",  en: "Gulab Jamun",           te: "గులాబ్ జామూన్",      cat: "Sweets",         img: "https://upload.wikimedia.org/wikipedia/commons/c/c4/Gulab_jamun_%28Gibraltar%2C_November_2020%29.jpg" },
+  { id: "f6",  en: "Badam Milk Shake",      te: "బాదం మిల్క్ షేక్",   cat: "Welcome Drinks", img: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Badam_milk.JPG/800px-Badam_milk.JPG" },
   { id: "f7",  en: "Pav Bhaji",             te: "పావ్ భాజీ",           cat: "Welcome Snacks", img: "https://images.unsplash.com/photo-1606491956689-2ea866880c84?w=400&q=80" },
   { id: "f8",  en: "Butter Naan",           te: "బటర్ నాన్",           cat: "Rotis",          img: "https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=400&q=80" },
-  { id: "f9",  en: "Pulka",                 te: "పుల్కా",              cat: "Rotis",          img: "https://images.unsplash.com/photo-1540420773420-3366772f4999?w=400&q=80" },
-  { id: "f10", en: "Carrot Halwa",          te: "క్యారెట్ హల్వా",      cat: "Halwas",         img: "https://images.unsplash.com/photo-1624300629298-e9ff39444e9f?w=400&q=80" },
-  { id: "f11", en: "Mango Pulihora",        te: "మామిడి పులిహోర",      cat: "Flavoured Rice", img: "https://images.unsplash.com/photo-1536304929831-ee1ca9d44906?w=400&q=80" },
+  { id: "f9",  en: "Pulka",                 te: "పుల్కా",              cat: "Rotis",          img: "https://upload.wikimedia.org/wikipedia/commons/c/c5/Roti_in_a_plate.jpg" },
+  { id: "f10", en: "Carrot Halwa",          te: "క్యారెట్ హల్వా",      cat: "Halwas",         img: "https://upload.wikimedia.org/wikipedia/commons/3/30/Gajar_ka_halwa.jpg" },
+  { id: "f11", en: "Mango Pulihora",        te: "మామిడి పులిహోర",      cat: "Flavoured Rice", img: "https://upload.wikimedia.org/wikipedia/commons/e/e4/Pulihora_%28Tamarind_Rice%29.JPG" },
   { id: "f12", en: "Kulfi",                 te: "కుల్ఫీ",               cat: "Ice Creams",     img: "https://images.unsplash.com/photo-1497034825429-c343d7c6a68f?w=400&q=80" },
 ];
 
