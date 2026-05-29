@@ -8,7 +8,7 @@ const FEATURED = [
   { id: "f3",  en: "Paneer Butter Masala",  te: "పనీర్ బటర్ మసాలా",   cat: "Gravy",          img: "https://images.unsplash.com/photo-1631452180519-c014fe946bc7?w=400&q=80" },
   { id: "f4",  en: "Veg Dum Biryani",       te: "వెజ్ దమ్ బిర్యానీ",  cat: "Biryani",        img: "https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=400&q=80" },
   { id: "f5",  en: "Gulab Jamun",           te: "గులాబ్ జామూన్",      cat: "Sweets",         img: "https://upload.wikimedia.org/wikipedia/commons/c/c4/Gulab_jamun_%28Gibraltar%2C_November_2020%29.jpg" },
-  { id: "f6",  en: "Badam Milk Shake",      te: "బాదం మిల్క్ షేక్",   cat: "Welcome Drinks", img: "https://images.unsplash.com/photo-1626081498144-8d48a528e12b?w=400&q=80" },
+  { id: "f6",  en: "Badam Milk Shake",      te: "బాదం మిల్క్ షేక్",   cat: "Welcome Drinks", img: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Thandai_%28Spiced_Indian_Milk_Drink%29.JPG/960px-Thandai_%28Spiced_Indian_Milk_Drink%29.JPG" },
   { id: "f7",  en: "Pav Bhaji",             te: "పావ్ భాజీ",           cat: "Welcome Snacks", img: "https://images.unsplash.com/photo-1606491956689-2ea866880c84?w=400&q=80" },
   { id: "f8",  en: "Butter Naan",           te: "బటర్ నాన్",           cat: "Rotis",          img: "https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=400&q=80" },
   { id: "f9",  en: "Pulka",                 te: "పుల్కా",              cat: "Rotis",          img: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/2020-05-08_19_34_28_Chapati_being_made_in_a_pan_in_the_Franklin_Farm_section_of_Oak_Hill%2C_Fairfax_County%2C_Virginia.jpg/960px-2020-05-08_19_34_28_Chapati_being_made_in_a_pan_in_the_Franklin_Farm_section_of_Oak_Hill%2C_Fairfax_County%2C_Virginia.jpg" },
