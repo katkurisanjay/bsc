@@ -26,16 +26,16 @@ export default function About() {
             
             <div className="relative z-10 flex flex-col sm:flex-row items-center sm:items-start gap-8">
               {/* Photo */}
-              <div className="relative flex-shrink-0">
-                <div className="w-32 h-32 sm:w-40 sm:h-40 rounded-full border-4 border-white shadow-xl overflow-hidden group-hover:scale-105 transition-transform duration-500">
+              <div className="relative flex-shrink-0 mx-auto sm:mx-0">
+                <div className="w-48 h-48 sm:w-56 sm:h-56 lg:w-64 lg:h-64 rounded-full border-[6px] border-white shadow-2xl overflow-hidden group-hover:scale-105 transition-transform duration-500">
                   <img 
-                    src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?w=400&q=80" 
+                    src="/master chef.png" 
                     alt="Master Chef" 
                     className="w-full h-full object-cover"
                   />
                 </div>
-                <div className="absolute -bottom-3 -right-3 bg-white p-1.5 rounded-full shadow-md">
-                  <div className="bg-saffron text-white w-10 h-10 rounded-full flex items-center justify-center font-display font-bold text-lg">
+                <div className="absolute bottom-2 right-2 sm:-bottom-2 sm:-right-2 bg-white p-2 rounded-full shadow-lg">
+                  <div className="bg-saffron text-white w-12 h-12 rounded-full flex items-center justify-center font-display font-bold text-xl">
                     20+
                   </div>
                 </div>
