@@ -1,10 +1,12 @@
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import { useLang } from "../context/LanguageContext";
 import { menuData } from "../data/menuData";
 import { MagnifyingGlassIcon, ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/24/outline";
 
 export default function Menu() {
   const { lang, t } = useLang();
+  const location = useLocation();
   const [search, setSearch] = useState("");
   const [activeTab, setActiveTab] = useState("all");
   const [expandedCats, setExpandedCats] = useState(
@@ -14,6 +16,19 @@ export default function Menu() {
   const toggleCat = (id) => {
     setExpandedCats((prev) => ({ ...prev, [id]: !prev[id] }));
   };
+
+  useEffect(() => {
+    const queryParams = new URLSearchParams(location.search);
+    const catName = queryParams.get("cat");
+    
+    if (catName) {
+      const foundCat = menuData.find(c => c.en === catName || c.id === catName);
+      if (foundCat) {
+        setActiveTab(foundCat.id);
+        setExpandedCats(menuData.reduce((acc, c) => ({ ...acc, [c.id]: c.id === foundCat.id }), {}));
+      }
+    }
+  }, [location.search]);
 
   const filteredData = useMemo(() => {
     let data = menuData;

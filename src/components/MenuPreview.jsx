@@ -110,18 +110,29 @@ export default function MenuPreview() {
         </div>
 
         {/* Stats Row */}
-        <div className="flex flex-wrap justify-center gap-8 mb-12 reveal reveal-delay-2">
-          {[
-            { num: "300+", label: lang === "en" ? "Dishes" : "వంటకాలు" },
-            { num: "29",   label: lang === "en" ? "Categories" : "వర్గాలు" },
-            { num: "100%", label: lang === "en" ? "Vegetarian" : "శాకాహారి" },
-            { num: "33",   label: lang === "en" ? "Districts Served" : "సేవించిన జిల్లాలు" },
-          ].map((stat) => (
-            <div key={stat.num} className="text-center">
-              <div className="font-display text-3xl font-bold text-gradient-saffron">{stat.num}</div>
-              <div className="font-body text-sm text-gray-500 mt-1">{stat.label}</div>
+        <div className="relative max-w-5xl mx-auto mb-16 reveal reveal-delay-2 px-4 sm:px-0">
+          <div className="bg-white rounded-[2rem] shadow-[0_8px_30px_rgb(0,0,0,0.08)] border border-gray-100 p-8 md:p-12 relative overflow-hidden">
+            {/* Background Accent */}
+            <div className="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-saffron via-orange-400 to-saffron"></div>
+            
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-4 divide-y md:divide-y-0 md:divide-x divide-gray-100">
+              {[
+                { num: "300+", label: lang === "en" ? "Pure Veg Dishes" : "శుద్ధ శాకాహారి వంటకాలు" },
+                { num: "29",   label: lang === "en" ? "Menu Categories" : "మెనూ వర్గాలు" },
+                { num: "100%", label: lang === "en" ? "Quality Assured" : "నాణ్యత హామీ" },
+                { num: "33",   label: lang === "en" ? "Districts Served" : "సేవించిన జిల్లాలు" },
+              ].map((stat, idx) => (
+                <div key={stat.num} className={`text-center group flex flex-col items-center justify-center ${idx > 1 ? "pt-8 md:pt-0" : ""} ${idx === 1 ? "pt-8 sm:pt-0 md:pt-0" : ""}`}>
+                  <div className="font-display text-4xl md:text-5xl lg:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-br from-saffron to-orange-600 mb-3 transform transition-transform duration-300 group-hover:scale-110">
+                    {stat.num}
+                  </div>
+                  <div className="font-body text-xs md:text-sm font-bold text-gray-500 uppercase tracking-widest max-w-[120px]">
+                    {stat.label}
+                  </div>
+                </div>
+              ))}
             </div>
-          ))}
+          </div>
         </div>
 
         {/* CTA Button */}
