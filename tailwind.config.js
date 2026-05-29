@@ -16,7 +16,7 @@ module.exports = {
         telugu: ["'Noto Sans Telugu'", "'Poppins'", "sans-serif"],
       },
       backgroundImage: {
-        "hero-gradient": "linear-gradient(135deg, #5C1500 0%, #7A1A00 40%, #8B1A1A 100%)",
+        "hero-gradient": "linear-gradient(135deg, #1a0a00 0%, #3d1a00 30%, #6b2d00 60%, #8B1A1A 100%)",
         "card-gradient": "linear-gradient(145deg, rgba(255,248,240,0.95), rgba(255,243,224,0.9))",
         "gold-gradient": "linear-gradient(135deg, #F5C518, #E07B00)",
         "saffron-gradient": "linear-gradient(135deg, #E07B00, #8B1A1A)",
