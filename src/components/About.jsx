@@ -17,34 +17,45 @@ export default function About() {
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         {/* Profiles */}
-        <div className="space-y-8 reveal reveal-delay-1">
+        <div className="space-y-8 reveal reveal-delay-1 h-full flex flex-col justify-center">
           {/* Founder */}
-          <div className="card p-6 flex flex-col sm:flex-row items-center sm:items-start gap-6 relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-32 h-32 bg-saffron/5 rounded-bl-full -z-10"></div>
-            <div className="w-24 h-24 sm:w-32 sm:h-32 rounded-full bg-gray-200 border-4 border-white shadow-md flex-shrink-0 flex items-center justify-center overflow-hidden">
-              {/* Photo placeholder */}
-              <span className="text-gray-400 font-body text-xs text-center px-2">[Upload Photo]</span>
-            </div>
-            <div className="text-center sm:text-left">
-              <h3 className="font-display font-bold text-2xl text-[#1A1A1A] mb-1">{t.founderName}</h3>
-              <p className="font-body text-saffron font-medium mb-3">{t.founderTitle}</p>
-              <span className="inline-block px-3 py-1 bg-gray-100 rounded-full text-xs font-semibold text-gray-600 mb-4">
-                {t.founderExp}
-              </span>
-              <p className="font-body text-gray-600 text-sm leading-relaxed">
-                {t.founderBio}
-              </p>
-            </div>
-          </div>
+          <div className="relative bg-white rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.06)] border border-gray-100 p-8 sm:p-10 overflow-hidden group hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)] transition-shadow duration-300">
+            {/* Decorative elements */}
+            <div className="absolute top-0 right-0 w-48 h-48 bg-gradient-to-bl from-saffron/10 to-transparent rounded-bl-full -z-0"></div>
+            <div className="absolute -left-10 -bottom-10 w-40 h-40 bg-orange-50 rounded-full blur-2xl -z-0 opacity-50"></div>
+            
+            <div className="relative z-10 flex flex-col sm:flex-row items-center sm:items-start gap-8">
+              {/* Photo */}
+              <div className="relative flex-shrink-0">
+                <div className="w-32 h-32 sm:w-40 sm:h-40 rounded-full border-4 border-white shadow-xl overflow-hidden group-hover:scale-105 transition-transform duration-500">
+                  <img 
+                    src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?w=400&q=80" 
+                    alt="Master Chef" 
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="absolute -bottom-3 -right-3 bg-white p-1.5 rounded-full shadow-md">
+                  <div className="bg-saffron text-white w-10 h-10 rounded-full flex items-center justify-center font-display font-bold text-lg">
+                    20+
+                  </div>
+                </div>
+              </div>
 
-          {/* Co-Founder Placeholder */}
-          <div className="card p-6 flex flex-col sm:flex-row items-center sm:items-start gap-6 border border-dashed border-gray-300 bg-gray-50/50">
-            <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-full bg-gray-200 border-4 border-white shadow-sm flex-shrink-0 flex items-center justify-center">
-              <span className="text-gray-400 font-body text-xs text-center px-2">[Upload Photo]</span>
-            </div>
-            <div className="text-center sm:text-left flex flex-col justify-center w-full">
-              <h3 className="font-display font-bold text-xl text-gray-400 mb-1">[Add Co-Founder Details]</h3>
-              <p className="font-body text-gray-400 font-medium">{t.cofounderTitle}</p>
+              {/* Text */}
+              <div className="text-center sm:text-left flex-1">
+                <div className="inline-flex items-center gap-2 px-3 py-1 bg-orange-50 border border-orange-100 rounded-full text-xs font-bold text-orange-600 tracking-widest uppercase mb-4">
+                  <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                  {t.founderExp}
+                </div>
+                <h3 className="font-display font-black text-3xl sm:text-4xl text-[#1A1A1A] mb-2 tracking-tight">
+                  {t.founderName}
+                </h3>
+                <p className="font-body text-saffron font-bold text-lg mb-4">{t.founderTitle}</p>
+                <div className="w-12 h-1 bg-gray-200 mb-5 mx-auto sm:mx-0"></div>
+                <p className="font-body text-gray-600 text-base leading-relaxed italic">
+                  "{t.founderBio}"
+                </p>
+              </div>
             </div>
           </div>
         </div>
